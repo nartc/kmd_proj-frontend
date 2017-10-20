@@ -1,0 +1,28 @@
+button.btn-success {
+    background-color: #218838;
+    border-color: #1e7e34;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+button.btn-success:disabled {
+    cursor: not-allowed;
+}
+
+button.btn-success:hover {
+    background-color: #28a745;
+    border-color: #28a745
+}
+
+.card-header {
+    background-color: #363e43;
+}
+
+.card-body {
+    background-color: whitesmoke;
+    color: darkslategrey;
+}
+
+i.fa-check {
+    color: green;
+}

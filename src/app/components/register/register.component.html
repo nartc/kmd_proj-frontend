@@ -1,3 +1,79 @@
-<p>
-  register works!
-</p>
+<div class="container">
+  <div class="col-md-9 col-sm-12 mx-auto">
+    <div class="card">
+      <div class="card-header">
+        Register
+      </div>
+      <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit(registerForm.value)">
+          <div class="form-group">
+            <label for="nickname">What we should call you</label>
+            <div class="input-group">
+              <input type="text" class="form-control" formControlName="nickname" id="nickname" placeholder="Nickname"/>
+              <span class="input-group-addon" *ngIf="registerForm.controls['nickname'].touched && registerForm.controls['nickname'].valid">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <div class="alert alert-danger animated slideInDown" *ngIf="!registerForm.controls['nickname'].valid 
+                        && registerForm.controls['nickname'].touched 
+                        && registerForm.controls['nickname'].dirty">
+              <span *ngIf="registerForm.controls['nickname'].errors['minlength']">Must be at least 4 characters</span>
+              <span *ngIf="registerForm.controls['nickname'].errors['required']">This field is required</span>
+            </div>
+          </div>
+          <!--Nickname input-->
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <div class="input-group">
+              <input type="text" class="form-control" formControlName="email" id="email" placeholder="email@mail.com"/>
+              <span class="input-group-addon" *ngIf="registerForm.controls['email'].valid">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <div class="alert alert-danger animated slideInDown" *ngIf="!registerForm.controls['email'].valid && registerForm.controls['email'].touched">
+              <span *ngIf="registerForm.controls['email'].errors['required']">This field is required</span>
+              <span *ngIf="registerForm.controls['email'].errors['pattern']">Must be a valid email</span>
+            </div>
+          </div>
+          <!--Email input -->
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-group">
+              <input type="text" class="form-control" formControlName="password" id="password" placeholder="e.g: 123456"/>
+              <span class="input-group-addon" *ngIf="registerForm.controls['password'].valid">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <div class="alert alert-danger animated slideInDown" *ngIf="!registerForm.controls['password'].valid && registerForm.controls['password'].dirty">
+              <span *ngIf="registerForm.controls['password'].errors['required']">This field is required</span>
+              <span *ngIf="registerForm.controls['password'].errors['minlength']">Must be at least 6 characters</span>
+            </div>
+          </div>
+          <!--Password input -->
+
+          <div class="form-group" *ngIf="registerForm.controls['password'].valid">
+            <label for="verifyPassword">Confirm Password</label>
+            <div class="input-group">
+              <input type="password" id="confirmPassword" class="form-control" formControlName="verifyPassword">
+              <span class="input-group-addon" *ngIf="registerForm.controls['verifyPassword'].valid">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </span>
+            </div>
+            <div class="alert alert-danger animated slideInDown" *ngIf="!registerForm.controls['verifyPassword'].valid && registerForm.controls['verifyPassword'].dirty">
+              <span *ngIf="registerForm.controls['verifyPassword'].pristine || registerForm.controls['verifyPassword'].errors?.MatchPassword">Password does not match</span>
+            </div>
+          </div>
+          <!--Verify Password -->
+
+          <button class="btn btn-success btn-lg" type="submit" [disabled]="!registerForm.valid" id="submitButton">Submit</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

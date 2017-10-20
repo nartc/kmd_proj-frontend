@@ -1,0 +1,12 @@
+nav.navbar {
+    border-bottom: 2px solid rgba(22, 240, 222, 0.55);
+    transition: all 0.5s ease;
+}
+
+nav.navbar:hover {
+    box-shadow: 0 5px 5px #00a78d;
+}
+
+.primaryColor {
+    color: #00a78d;
+}

@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,400italic");
+
+body{
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 15px !important;
+    background: #38474f !important;
+    opacity: 0.8 !important;
+    color: #ffffff !important;
+}

@@ -1,3 +1,38 @@
-<p>
-  navbar works!
-</p>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#"><span class="primaryColor">KMD</span>PROJ</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/elements']" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{exact: true}">Elements
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/login']" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{exact: true}">Login
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/register']" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{exact: true}">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/profile/', id]" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{exact: true}">Profile <!--TODO: ID as Params-->
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" >Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
