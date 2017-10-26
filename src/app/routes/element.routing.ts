@@ -1,3 +1,4 @@
+import { ElementsComponent } from '../components/elements/elements.component';
 import { Routes } from '@angular/router';
 
 import { ElementAddComponent } from '../components/element-add/element-add.component';
@@ -19,5 +20,10 @@ export const ELEMENT_ROUTES: Routes = [
         path: 'edit/:id',
         component: ElementEditComponent,
         data: {title: 'KmdProj | Elements - Edit', pageTitle: 'Edit Element'}
+    },
+    {
+        path: '',
+        component: ElementsComponent,
+        data: {title: 'KmdProj | Elements - Main', pageTitle: 'Main'}
     }
 ]

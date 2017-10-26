@@ -9,22 +9,22 @@
           <div class="form-group">
             <label for="email">Email</label>
             <input type="text" class="form-control" formControlName="email" id="email" />
+            <div class="alert alert-danger animated slideInDown" *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].touched">
+              <span *ngIf="loginForm.controls['email'].errors['required']">This field is required</span>
+              <span *ngIf="loginForm.controls['email'].errors['pattern']">Must be a valid email</span>
+            </div>
           </div>
 
-          <div class="alert alert-danger animated slideInDown" *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].touched">
-            <span *ngIf="loginForm.controls['email'].errors['required']">This field is required</span>
-            <span *ngIf="loginForm.controls['email'].errors['pattern']">Must be a valid email</span>
-          </div>
 
           <div class="form-group">
             <label for="password">Password</label>
             <input type="password" class="form-control" formControlName="password" id="password">
+            <div class="alert alert-danger animated slideInDown" *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">
+              <span *ngIf="loginForm.controls['password'].errors['required']">This field is required</span>
+              <span *ngIf="loginForm.controls['password'].errors['minlength']">Must be at least 6 characters</span>
+            </div>
           </div>
 
-          <div class="alert alert-danger animated slideInDown" *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">
-            <span *ngIf="loginForm.controls['password'].errors['required']">This field is required</span>
-            <span *ngIf="loginForm.controls['password'].errors['minlength']">Must be at least 6 characters</span>
-          </div>
 
           <button class="btn btn-success btn-lg" type="submit" [disabled]="!loginForm.valid">Submit</button>
         </form>

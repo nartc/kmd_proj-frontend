@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
-//import { ErrorService } from './error.service';
+import { ErrorService } from './error.service';
+
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class HttpService {
@@ -13,7 +16,10 @@ export class HttpService {
 
   public static url = 'http://'+ HttpService.host + ':' + HttpService.port;
   //public static url = 'https://'+ HttpService.domain;
-  constructor(private http: Http) { }
+  constructor(
+    private http: Http,
+    private _errorService: ErrorService
+  ) { }
 
   get(endpoint: string, headersObject: Object): Observable<any> {
     let headers: Headers = new Headers(headersObject);
@@ -29,8 +35,9 @@ export class HttpService {
       )
       .catch(
         (err: Response) => {
-          //this.errorService.handleError(err);
-          return Observable.throw(err)
+          if(err.status == 401) {
+            return Observable.throw(err);            
+          }
         });
   }
 

@@ -1,3 +1,38 @@
-<p>
-  user-profile works!
-</p>
+<div *ngIf="doneLoading;else loading">
+  <div class="container">
+    <div class="col-10 mx-auto">
+      <div class="card text-white bg-dark" *ngIf="user;else noUser">
+        <div class="card-header">
+          <h1>{{user.nickname}}</h1>
+          <small>
+            {{user.privilege}}
+          </small>
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-dark">
+              <label for="email">Email:</label>
+              <p class="card-text">{{user.email}}</p>
+            </li>
+            <li class="list-group-item list-group-item-dark">
+              <label for="elements">Elements:</label> 
+              <p class="card-text">{{user.elements.length}}</p>
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary" style="cursor: pointer;" (click)="onAddClick()"><i class="fa fa-plus"></i> Add new element</button>
+          <button id="manageBtn" class="btn btn-success" (click)="onManageClick()" [disabled]="!hasElements"><i class="fa fa-pencil"></i> Manage Elements</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noUser>
+    <app-page-not-found></app-page-not-found>
+  </ng-template>
+</div>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

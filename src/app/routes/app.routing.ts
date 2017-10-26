@@ -1,6 +1,5 @@
+import { ElementShellComponent } from '../components/elements/element-shell/element-shell.component';
 import { Routes, RouterModule } from '@angular/router';
-
-import { ElementsComponent } from '../components/elements/elements.component';
 import { LoginComponent } from '../components/login/login.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 import { RegisterComponent } from '../components/register/register.component';
@@ -15,7 +14,7 @@ const APP_ROUTES: Routes = [
     },
     {
         path: 'elements',
-        component: ElementsComponent,
+        component: ElementShellComponent,
         data: { title: 'KmdProj | Elements', pageTitle: 'Elements | Main' },
         children: ELEMENT_ROUTES
     },

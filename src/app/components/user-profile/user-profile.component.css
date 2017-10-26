@@ -1,0 +1,11 @@
+pre {
+    color: #fff;
+}
+
+#manageBtn {
+    cursor: pointer;
+}
+
+#manageBtn:disabled {
+    cursor: not-allowed;
+}

@@ -28,4 +28,8 @@ export class LocalStorageService {
   public clearAll(): void {
       localStorage.clear();
   }
+
+  public checkEmpty(): number {
+    return localStorage.length;
+  }
 }

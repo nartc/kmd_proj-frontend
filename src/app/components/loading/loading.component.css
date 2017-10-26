@@ -1,0 +1,82 @@
+#loadingBlock{
+    padding: 20px;
+    background-color: #00a78d;
+    width: 80px;
+    height: 80px;
+    border-radius: 5% 50%;
+    animation: rotate ease-in 4s;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 50%;
+    -webkit-animation: rotate ease-in 4s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 50% 50%;
+    -moz-animation: rotate ease-in 4s;
+    -moz-animation-iteration-count: infinite;
+    -moz-transform-origin: 50% 50%;
+    -o-animation: rotate ease-in 4s;
+    -o-animation-iteration-count: infinite;
+    -o-transform-origin: 50% 50%;
+    -ms-animation: rotate ease-in 4s;
+    -ms-animation-iteration-count: infinite;
+    -ms-transform-origin: 50% 50%;
+  }
+  
+  @keyframes rotate{
+    0% {
+      transform:  translate(0px,0px)  rotate(0deg) ;
+    }
+    50% {
+      transform:  translate(525px,0px)  rotate(1440deg) ;
+    }
+    100% {
+      transform:  translate(0px,0px)  rotate(2880deg) ;
+    }
+  }
+  
+  @-moz-keyframes rotate{
+    0% {
+      -moz-transform:  translate(0px,0px)  rotate(0deg) ;
+    }
+    50% {
+      -moz-transform:  translate(223px,1px)  rotate(1440deg) ;
+    }
+    100% {
+      -moz-transform:  translate(2px,0px)  rotate(2880deg) ;
+    }
+  }
+  
+  @-webkit-keyframes rotate {
+    0% {
+      -webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+    }
+    50% {
+      -webkit-transform:  translate(223px,1px)  rotate(1440deg) ;
+    }
+    100% {
+      -webkit-transform:  translate(2px,0px)  rotate(2880deg) ;
+    }
+  }
+  
+  @-o-keyframes rotate {
+    0% {
+      -o-transform:  translate(0px,0px)  rotate(0deg) ;
+    }
+    50% {
+      -o-transform:  translate(223px,1px)  rotate(1440deg) ;
+    }
+    100% {
+      -o-transform:  translate(2px,0px)  rotate(2880deg) ;
+    }
+  }
+  
+  @-ms-keyframes rotate {
+    0% {
+      -ms-transform:  translate(0px,0px)  rotate(0deg) ;
+    }
+    50% {
+      -ms-transform:  translate(223px,1px)  rotate(1440deg) ;
+    }
+    100% {
+      -ms-transform:  translate(2px,0px)  rotate(2880deg) ;
+    }
+  }
