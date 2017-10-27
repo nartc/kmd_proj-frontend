@@ -2,13 +2,13 @@ export class Element {
     type: string;
     title: string;
     description?: string;
-    languages: string[];
+    languages: Language[];
     content: string;
 
     constructor(
         type: string,
         title: string,
-        languages: string[],
+        languages: Language[],
         content: string,
         description?: string
     ) {
@@ -18,4 +18,11 @@ export class Element {
         this.content = content;
         this.description = description;
     }
+}
+
+export interface Language {
+    name: string;
+    type: string;
+    code?: string;
+    parent?: string;
 }

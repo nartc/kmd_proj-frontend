@@ -29,7 +29,11 @@ export class LocalStorageService {
       localStorage.clear();
   }
 
-  public checkEmpty(): number {
-    return localStorage.length;
+  public checkEmpty(): boolean {
+    if(!this.fetchValueFromKey('token') && !this.fetchValueFromKey('user')) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

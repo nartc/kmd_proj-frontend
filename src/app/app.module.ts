@@ -20,11 +20,13 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { RegisterComponent } from './components/register/register.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { PrimeNgImports } from './imports/primeng-imports';
 import { AppRouting } from './routes/app.routing';
 import { AuthService } from './services/auth.service';
 import { ElementService } from './services/element.service';
 import { ErrorService } from './services/error.service';
 import { HttpService } from './services/http.service';
+import { LanguageService } from './services/language.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { AlertService } from './services/sweet-alert.service';
 
@@ -54,7 +56,8 @@ import { AlertService } from './services/sweet-alert.service';
     HttpModule,
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),
-    AppRouting
+    AppRouting,
+    PrimeNgImports
   ],
   providers: [
     AuthService,
@@ -63,7 +66,8 @@ import { AlertService } from './services/sweet-alert.service';
     HttpService,
     SweetAlertService,
     ErrorService,
-    AlertService
+    AlertService,
+    LanguageService
   ],
   bootstrap: [AppComponent]
 })
