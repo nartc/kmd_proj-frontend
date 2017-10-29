@@ -26,3 +26,7 @@ button.btn-success:hover {
 i.fa-check {
     color: green;
 }
+
+textarea#description {
+    height: 100px;
+}

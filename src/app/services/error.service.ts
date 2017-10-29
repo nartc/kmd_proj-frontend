@@ -52,7 +52,12 @@ export class ErrorService {
           if(this._localStorageService.checkEmpty()) {
             this._localStorageService.clearAll();
           }
-          this._router.navigate([this.previousUrl]);
+          if(this.currentUrl == '/login') {
+            this._router.navigate([this.previousUrl]);
+          } else {
+            this._router.navigate([this.currentUrl]);
+          }
+          
         }
       )
     }

@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="col-md-9 col-sm-12 mx-auto">
+  <div class="col-md-10 col-sm-12 mx-auto">
     <div class="card">
       <div class="card-header">
         Add New Element
@@ -18,7 +18,7 @@
 
           <div class="form-group">
             <label for="description">Description</label>
-            <textarea name="description" id="description" rows="10" class="form-control" formControlName="description" placeholder="Description"></textarea>
+            <textarea name="description" id="description" cols="10" rows="10" class="form-control" formControlName="description" placeholder="Description"></textarea>
           </div>
 
           <div class="form-group" formArrayName="languages">
@@ -28,7 +28,7 @@
 
           <div class="form-group">
             <label for="content">Content</label>
-            <textarea [froalaEditor] formControlName="content"></textarea>
+            <textarea [froalaEditor]="froalaOptions" formControlName="content"></textarea>
           </div>
 
           <button type="submit" class="btn btn-success btn-large">Submit</button>
